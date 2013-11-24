@@ -15,59 +15,59 @@ module Ipboard
     has n, :topics
 
     property :id, Serial
-    # property :topic_count, Integer, field: 'topics'
-    # property :post_count, Integer, field: 'posts'
-    # property :last_post_id, Integer, field: 'last_post'
-    # property :last_post_by_id, Integer, field: 'last_poster_id'
-    # property :last_post_by_name, String, field: 'last_poster_name'
+    property :topic_count, Integer, field: 'topics'
+    property :post_count, Integer, field: 'posts'
+    property :last_post_id, Integer, field: 'last_post'
+    property :last_post_by_id, Integer, field: 'last_poster_id'
+    property :last_post_by_name, String, field: 'last_poster_name'
     property :title, String, field: 'name'
     property :description, Text
     property :position, Integer
-    # property :use_ibc, Boolean # ???
-    # property :html_enabled, Boolean, field: 'use_html'
+    property :use_ibc, Boolean # ???
+    property :html_enabled, Boolean, field: 'use_html'
     property :password, String
     property :password_required, String, field: 'password_override' # Comma seperated values of groups not required to have password
-    # property :last_modified_topic_title, String, field: 'last_title'
-    # property :last_modified_topic_id, Integer, field: 'last_id'
-    # property :topic_sort_by, String, field: 'sort_key'
-    # property :topic_sort_direction, String, field: 'sort_order'
-    # property :topic_per_page, Integer, field: 'prune'
-    # property :topic_filter, String, field: 'topicfilter' # This is set to 'all' for all ssf topics
-    # property :show_rules, Integer # null, 0 or 2 ???
-    # property :require_post_review, Boolean, field: 'preview_posts' # If mods must approve before post? all 0 for ssf - still used??
-    # property :allow_poll, Boolean
-    # property :allow_poll_bump, Boolean, field: 'allow_pollbump' # All 0 for ssf - still used?
+    property :last_modified_topic_title, String, field: 'last_title'
+    property :last_modified_topic_id, Integer, field: 'last_id'
+    property :topic_sort_by, String, field: 'sort_key'
+    property :topic_sort_direction, String, field: 'sort_order'
+    property :topic_per_page, Integer, field: 'prune'
+    property :topic_filter, String, field: 'topicfilter' # This is set to 'all' for all ssf topics
+    property :show_rules, Integer # null, 0 or 2 ???
+    property :require_post_review, Boolean, field: 'preview_posts' # If mods must approve before post? all 0 for ssf - still used??
+    property :allow_poll, Boolean
+    property :allow_poll_bump, Boolean, field: 'allow_pollbump' # All 0 for ssf - still used?
     property :increments_post_count, Boolean, field: 'inc_postcount' # If posting in forum will cause user post_count to be incremented
-    # property :skin_id, Integer # 0 or null for newly created forums - Probably not used anymore
+    property :skin_id, Integer # 0 or null for newly created forums - Probably not used anymore
     property :parent_id, Integer # -1 for root forums otherwise id of parent forum
     property :redirect_url, String # URL this forum link redirects to
     property :redirect_enabled, Boolean, field: 'redirect_on'
     property :redirect_hit_count, Integer, field: 'redirect_hits'
     property :rules_title, String
     property :rules_text, Text
-    # property :mod_emails_on_queued, Text, field: 'notify_modq_emails' # List of emails to notify on queued post/topic? 0 or empty string SSF - still used?
+    property :mod_emails_on_queued, Text, field: 'notify_modq_emails' # List of emails to notify on queued post/topic? 0 or empty string SSF - still used?
     property :allows_topics, Boolean, field: 'sub_can_post' # If can post topics or only category forum
     property :permission_denied_text, Text, field: 'permission_custom_error'
     property :permission_denied_show_topics, Boolean, field: 'permission_showtopic' # Show topics but no posts if no permission?
-    # property :queued_topic_count, Integer, field: 'queued_topics'
-    # property :queued_post_count, Integer, field: 'queued_posts'
-    # property :ratings_enabled, Boolean, field: 'forum_allow_rating'
-    # property :last_deletion_at, EpochTime, field: 'forum_last_deletion' # Just topics? posts too?
-    # property :last_topic_title, String, field: 'newest_title'
-    # property :last_topic_id, Integer, field: 'newest_id' # -_- ipb
-    # property :can_view_others, Boolean # ??? all 1 on SSF - Still used?
+    property :queued_topic_count, Integer, field: 'queued_topics'
+    property :queued_post_count, Integer, field: 'queued_posts'
+    property :ratings_enabled, Boolean, field: 'forum_allow_rating'
+    property :last_deletion_at, EpochTime, field: 'forum_last_deletion' # Just topics? posts too?
+    property :last_topic_title, String, field: 'newest_title'
+    property :last_topic_id, Integer, field: 'newest_id' # -_- ipb
+    property :can_view_others, Boolean # ??? all 1 on SSF - Still used?
     property :min_post_count_to_post, Integer, field: 'min_posts_post'
     property :min_post_count_to_view, Integer, field: 'min_posts_view'
-    #! property :hidden_last_topic, Boolean, field: 'hide_last_info' # Normally last topic info is displayed on forum list page regardless of permissions this disables that.
-    # property :title_slug, String, field: 'name_seo'
-    # property :last_topic_slug, String, field: 'seo_last_title'
-    # property :last_post_by_slug, String, field: 'seo_last_name'
-    # property :last_topic_ids_created_at_map, SerializedPHP, field: 'last_x_topic_ids'
-    #! property :options_bit, Integer, field: 'forums_bitoptions' # ???
+    property :hidden_last_topic, Boolean, field: 'hide_last_info' # Normally last topic info is displayed on forum list page regardless of permissions this disables that.
+    property :title_slug, String, field: 'name_seo'
+    property :last_topic_slug, String, field: 'seo_last_title'
+    property :last_post_by_slug, String, field: 'seo_last_name'
+    property :last_topic_ids_created_at_map, SerializedPHP, field: 'last_x_topic_ids'
+    property :options_bit, Integer, field: 'forums_bitoptions' # ???
     property :character_requirement, Boolean, field: 'f_chars_limitation' # If character requirement is enabled (Min post)
-    # property :share_links_disabled, Boolean, field: 'disable_sharelinks'
-    # property :deleted_post_count, Integer, field: 'deleted_posts'
-    # property :deleted_topic_count, Integer, field: 'deleted_topics'
+    property :share_links_disabled, Boolean, field: 'disable_sharelinks'
+    property :deleted_post_count, Integer, field: 'deleted_posts'
+    property :deleted_topic_count, Integer, field: 'deleted_topics'
     property :predefined_tags, Text, field: 'tag_predefined' # Comma seperated value
     property :newest_prefix, String # Not used on ssf
     property :require_prefix, Boolean # Not used on ssf
@@ -77,16 +77,16 @@ module Ipboard
     property :show_prefix_in_description, Boolean, field: 'show_prefix_in_desc' # not used on ssf
     property :min_character_count, Integer, field: 'f_num_chars'
     property :min_word_count, Integer, field: 'f_num_words'
-    # property :archived_topic_count, Integer, field: 'archived_topics'
-    # property :archived_post_count, Integer, field: 'archived_posts'
+    property :archived_topic_count, Integer, field: 'archived_topics'
+    property :archived_post_count, Integer, field: 'archived_posts'
     property :min_post_count, Integer, field: 'f_num_posts'
     property :min_topic_count, Integer, field: 'f_num_threads'
     property :min_daily_posts, Integer, field: 'f_daily_posts'
     property :min_days_as_member, Integer, field: 'f_reg_days'
     property :min_like_count, Integer, field: 'f_num_likes'
     property :min_age, Integer, field: 'f_age'
-    # property :viglink, Boolean # ??
-    # property :seo_priority, String, field: 'ipseo_priority' # ???
+    property :viglink, Boolean # ??
+    property :seo_priority, String, field: 'ipseo_priority' # ???
   end
 
   class Topic

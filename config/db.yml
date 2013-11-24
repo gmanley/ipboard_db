@@ -1,4 +1,4 @@
-ipgallery:
+ipboard:
   user: root
   password:
   adapter: mysql

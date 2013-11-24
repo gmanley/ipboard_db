@@ -14,7 +14,7 @@ ActiveSupport::Dependencies.autoload_paths << File.expand_path('../lib', __FILE_
 def setup_db!
   config = YAML.load_file(File.join(APP_ROOT, 'config/db.yml'))
   DataMapper::Logger.new(STDOUT, :debug)
-  DataMapper.setup(:default, config['ipgallery'])
+  DataMapper.setup(:default, config['ipboard'])
 end
 
 def reload!
